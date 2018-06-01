@@ -19,4 +19,6 @@ public class BoardTest {
         assertEquals(Piece.O, board.get(new Space(1,1)));
         assertEquals(null, board.get(new Space(2,2)));
     }
+
+
 }
