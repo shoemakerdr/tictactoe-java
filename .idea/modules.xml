@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/tictactoe-java.iml" filepath="$PROJECT_DIR$/tictactoe-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tictactoe-java_main.iml" filepath="$PROJECT_DIR$/.idea/modules/tictactoe-java_main.iml" group="tictactoe-java" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tictactoe-java_test.iml" filepath="$PROJECT_DIR$/.idea/modules/tictactoe-java_test.iml" group="tictactoe-java" />
+    </modules>
+  </component>
+</project>

@@ -15,4 +15,4 @@ include 'api'
 include 'services:webservice'
 */
 
-rootProject.name = 'practice'
+rootProject.name = 'tictactoe-java'
