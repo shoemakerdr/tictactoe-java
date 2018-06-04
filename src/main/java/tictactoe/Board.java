@@ -1,10 +1,13 @@
 package tictactoe;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Board {
-    Map<Space,Piece> spaces;
+    private Map<Space,Piece> spaces;
 
     public Board() {
        spaces = new HashMap<>();
@@ -20,8 +23,21 @@ public class Board {
         return spaces.get(space);
     }
 
-    public void place(Space space, Piece piece) {
+    public Board place(Space space, Piece piece) {
         spaces.put(space, piece);
+        return this;
+    }
+
+    public boolean isFull() {
+        return !spaces.containsValue(null);
+    }
+
+    public List<Space> availableSpaces() {
+        return spaces.entrySet()
+                .stream()
+                .filter(s -> s.getValue() == null)
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toList());
     }
 }
 
