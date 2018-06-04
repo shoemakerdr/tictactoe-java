@@ -2,6 +2,7 @@ package tictactoe;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -58,6 +59,14 @@ public class BoardTest {
         List<Space> actual = board.availableSpaces();
         Collections.sort(actual);
         assertEquals(expected, actual);
+        // returns empty list when no spaces available
+        board.place(new Space(1,0), Piece.O)
+                .place(new Space(1,1), Piece.X)
+                .place(new Space(1,2), Piece.O)
+                .place(new Space(2,0), Piece.X)
+                .place(new Space(2,1), Piece.O)
+                .place(new Space(2,2), Piece.X);
+        assertEquals(new ArrayList<Space>(), board.availableSpaces());
     }
 
 }
