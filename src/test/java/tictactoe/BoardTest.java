@@ -4,7 +4,6 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -57,7 +56,7 @@ public class BoardTest {
                 new Space(2,2)
         );
         List<Space> actual = board.availableSpaces();
-        Collections.sort(actual);
+        actual.sort(Space::compareTo);
         assertEquals(expected, actual);
         // returns empty list when no spaces available
         board.place(new Space(1,0), Piece.O)
