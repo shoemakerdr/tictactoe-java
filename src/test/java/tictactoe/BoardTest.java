@@ -58,7 +58,6 @@ public class BoardTest {
         List<Space> actual = board.availableSpaces();
         actual.sort(Space::compareTo);
         assertEquals(expected, actual);
-        // returns empty list when no spaces available
         board.place(new Space(1,0), Piece.O)
                 .place(new Space(1,1), Piece.X)
                 .place(new Space(1,2), Piece.O)
@@ -68,4 +67,14 @@ public class BoardTest {
         assertEquals(new ArrayList<Space>(), board.availableSpaces());
     }
 
+    @Test
+    public void itCanCopyItself() {
+        Board board = new Board();
+        board.place(new Space(0,0), Piece.X)
+                .place(new Space(1,1), Piece.O)
+                .place(new Space(2,2), Piece.X);
+        Board copy = board.copy();
+        assertTrue(copy.equals(board));
+        assertFalse(copy == board);
+    }
 }

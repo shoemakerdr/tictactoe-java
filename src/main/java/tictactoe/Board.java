@@ -39,5 +39,19 @@ public class Board {
                 .map(Map.Entry::getKey)
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Board board = (Board) obj;
+        return board.spaces.equals(spaces);
+    }
+
+    public Board copy() {
+        Board boardCopy = new Board();
+        boardCopy.spaces = new HashMap<>(spaces);
+        return boardCopy;
+    }
 }
 
